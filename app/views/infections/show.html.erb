@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @infection %>
+
+<div>
+  <%= link_to "Edit this infection", edit_infection_path(@infection) %> |
+  <%= link_to "Back to infections", infections_path %>
+
+  <%= button_to "Destroy this infection", @infection, method: :delete %>
+</div>

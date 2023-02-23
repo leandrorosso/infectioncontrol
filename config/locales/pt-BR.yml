@@ -3,6 +3,7 @@ pt-BR:
     models:
       user: 'Usuário'
       bacterium: 'Bactéria'
+      infection: 'Infecção'
 
     attributes:
       default: &default
@@ -12,6 +13,12 @@ pt-BR:
       bacterium:
         <<: *default
         description: 'Descrição'
+
+      infection:
+        <<: *default
+        description: 'Descrição'
+        active: 'Ativo'
+        bacterium_id: 'Bactéria'
 
       user:
         <<: *default

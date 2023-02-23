@@ -1,4 +1,5 @@
 class BacteriaController < ApplicationController
+  before_action :authorize_bacterium
   before_action :set_bacterium, only: %i[ show edit update destroy ]
 
   # GET /bacteria or /bacteria.json
@@ -66,5 +67,9 @@ class BacteriaController < ApplicationController
     # Only allow a list of trusted parameters through.
     def bacterium_params
       params.require(:bacterium).permit(:description)
+    end
+
+    def authorize_bacterium
+      authorize Bacterium
     end
 end

@@ -1,0 +1,32 @@
+<%= form_with(model: infection) do |form| %>
+  <% if infection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(infection.errors.count, "error") %> prohibited this infection from being saved:</h2>
+
+      <ul>
+        <% infection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :active, style: "display: block" %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div>
+    <%= form.label :bacterium_id, style: "display: block" %>
+    <%= form.select :bacterium_id, Bacterium.all.collect {|b| [ b.name, b.id ] }, id: :infection_bacterium_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

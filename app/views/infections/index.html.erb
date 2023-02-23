@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Infections</h1>
+
+<div id="infections">
+  <% @infections.each do |infection| %>
+    <%= render infection %>
+    <p>
+      <%= link_to "Show this infection", infection %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New infection", new_infection_path %>
