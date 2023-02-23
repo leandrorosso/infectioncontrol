@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bacterium %>
+
+<div>
+  <%= link_to "Edit this bacterium", edit_bacterium_path(@bacterium) %> |
+  <%= link_to "Back to bacteria", bacteria_path %>
+
+  <%= button_to "Destroy this bacterium", @bacterium, method: :delete %>
+</div>
